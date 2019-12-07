@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    // font-family: 'Roboto Mono', monospace;
+    @font-face {
+        font-family: lato;
+        src: url('assets/fonts/AdobeGothicStd-Bold.otf') format("opentype");
+      }
+    
+}
+

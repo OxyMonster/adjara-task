@@ -1,0 +1,19 @@
+@import "../assets/variable"; 
+.main-header  {
+    min-height: 4.8rem;
+    align-items: center;
+    background-color: $white;
+    z-index: 9;
+
+
+}
+
+.content {
+    height: 90vh;
+    width: 100%;
+    background-color: $dark-grey;
+
+}
+
+
+

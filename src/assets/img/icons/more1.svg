@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 19" width="20" height="19">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #b3b6b9 } 
+	</style>
+	<g id="== All ==">
+		<g id="top panel">
+			<g id="navigation">
+				<g id="more">
+					<path id="more1" class="shp0" d="M18.68 4.68M3.25 4.41L3.25 14.6C3.25 15.23 3.75 15.74 4.38 15.74L15.63 15.74C16.25 15.74 16.75 15.23 16.75 14.6L16.75 11.21L19 11.21L19 15.74C19 16.99 17.99 18 16.75 18L3.25 18C2.01 18 1 16.99 1 15.74L1 3.28C1 2.03 2.01 1.01 3.25 1.01L8.88 1.01L8.88 3.28L4.38 3.28C3.75 3.28 3.25 3.79 3.25 4.41Z" />
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

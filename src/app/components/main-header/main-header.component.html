@@ -1,0 +1,27 @@
+<div class="header d-flex justify-content-between align-items-center">
+  <div class="header__logo col-md-4">
+   <a [routerLink]="[ '/' ]">Adjara Task</a>
+  </div>
+  <div class="header__item d-flex col-md-8">
+
+    <div class="header__item__movies  col-md-2">
+      <a class="" [routerLink]="[ '/movies']" routerLinkActive="active">
+        <img src="assets/img/icons/movies1.svg" alt="movies">
+      </a>
+      <div class="header__item__movies__box p-1">
+        <span>MOVIES</span>
+      </div>
+    </div>
+
+    <div class="header__item__upload col-md-2">
+      <a class="" [routerLink]="[ '/upload-movie']" routerLinkActive="active">
+        <img class="upload-1" src="assets/img/icons/more.svg" alt="upload-movie">
+      </a>
+      <div class="header__item__movies__box p-1">
+        <span>UPLOAD</span>
+      </div>
+    </div>   
+
+  </div>
+</div>
+     

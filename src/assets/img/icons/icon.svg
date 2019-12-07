@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114 19" width="114" height="19">
+	<style>
+		tspan { white-space:pre }
+		.txt0 { font-size: 18px;fill: #3f444e;font-family: "Adobe Gothic Std";font-weight: bold } 
+		.shp1 { fill: #d8232a } 
+		.shp2 { fill: #575c67 } 
+	</style>
+	<text id="M    vie store" style="transform: matrix(1,0,0,1,-1,17)" >
+		<tspan x="0" y="0" class="txt0">M    vie store</tspan>
+	</text>
+	<g id="icon">
+		<path id="video" class="shp1" d="M23 18C18.58 18 15 14.42 15 10C15 5.58 18.58 2 23 2C27.42 2 31 5.58 31 10C31 14.42 27.42 18 23 18ZM23 4C19.69 4 17 6.69 17 10C17 13.31 19.69 16 23 16C26.31 16 29 13.31 29 10C29 6.69 26.31 4 23 4Z" />
+		<path id="video1" class="shp2" d="M25.79 10.34L21.53 12.93C21.23 13.11 20.99 12.97 20.99 12.62L20.99 7.41C20.99 7.06 21.23 6.92 21.53 7.1L25.79 9.69C26.09 9.87 26.09 10.16 25.79 10.34Z" />
+	</g>
+</svg>

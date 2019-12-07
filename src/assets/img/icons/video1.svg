@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 10" width="9" height="10">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #575c67 } 
+	</style>
+	<g id="== All ==">
+		<g id="top panel">
+			<g id="logo">
+				<g id="icon">
+					<path id="video1" class="shp0" d="M6.79 5.34L2.53 7.93C2.23 8.11 1.99 7.97 1.99 7.62L1.99 2.41C1.99 2.06 2.23 1.92 2.53 2.1L6.79 4.69C7.09 4.87 7.09 5.16 6.79 5.34Z" />
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>
