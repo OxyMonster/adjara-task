@@ -1,11 +1,11 @@
 @import '../../assets/variable'; 
 
 .movies {
-    background-image: url('../../assets/img/wrapper.svg');
+    background-color: $black;
+
 }; 
 
 .movies-content {
-    background-color: $black;
     p {
         font-size: 14px;
         color: $white;
