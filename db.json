@@ -1,0 +1,26 @@
+{
+  "upload-movie": [
+    {
+      "title": "12313123",
+      "description": "123123123",
+      "image": null,
+      "id": 1
+    },
+    {
+      "title": "asdasdasd",
+      "description": "asdasdasdsad",
+      "image": null,
+      "id": 2
+    }
+  ],
+  "movies": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

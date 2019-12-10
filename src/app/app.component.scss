@@ -1,6 +1,15 @@
 @import "../assets/variable"; 
+.container-fluid {
+    height: 100vh;
+}; 
+
+.row {
+    height: 100%;
+}; 
+
 .main-header  {
-    min-height: 4.8rem;
+    height: 4.8rem;
+    position: sticky;
     align-items: center;
     background-color: $white;
     z-index: 9;
@@ -9,7 +18,7 @@
 }
 
 .content {
-    height: 90vh;
+    height: 100%;
     width: 100%;
     background-color: $dark-grey;
 

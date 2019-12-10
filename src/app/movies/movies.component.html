@@ -1,0 +1,14 @@
+<div class="movies mt-4 d-flex justify-content-between" > 
+   <div class="movies-content col-md-4" *ngFor="let item of moviesList">
+    <div class="movies-content__title">
+        <p>{{ item.title }}</p>
+    </div>
+    <div class="movies-content__description">
+        <p>{{ item.description }}</p>
+    </div>
+    <div class="movies-content__image">
+        <p>{{ item.image }}</p>
+        <!-- <img [src]="item.movieImg" alt="">     -->
+    </div>
+   </div>
+</div>     
