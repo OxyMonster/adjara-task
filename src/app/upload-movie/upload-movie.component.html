@@ -3,7 +3,7 @@
     <h4>Upload Movie</h4>   
   </div> 
   <div class="upload-content">
-    <form [formGroup] = 'movieForm' (ngSubmit) = 'onSubmit(movieForm)'>
+    <form [formGroup] = 'movieForm' (ngSubmit) = 'onSubmit()'>
       <label for="form-title">Enter Title</label>
       <input id="form-title" type="text" class="form-control" formControlName="title">
       <label for="form-description">Enter Description</label>

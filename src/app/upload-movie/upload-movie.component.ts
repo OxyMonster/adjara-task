@@ -28,20 +28,15 @@ export class UploadMovieComponent implements OnInit {
   }
 
   onFileSelected(event: any) {
-    // console.log(event.target.files[0]);
     
-    // if(event.target.files.legth > 0) {
       this.selectedFile = event.target.files[0]; 
-      // console.log(this.selectedFile); 
       this.movieForm.get('movieImg').setValue(this.selectedFile); 
       console.log(this.movieForm.get('movieImg').value);
-      
-    // }; 
 
   }; 
 
 
-  onSubmit(form: FormGroup) {
+  onSubmit() {
 
     const uploadData = new FormData();
     uploadData.append('title', this.movieForm.get('title').value);

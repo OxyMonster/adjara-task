@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { MoviesService } from 'src/app/services/movies.service';
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.scss']
 })
-export class MoviesComponent implements OnInit {
+export class MoviesComponent implements OnInit, OnDestroy {
 
   moviesList: any = []; 
 
@@ -15,19 +15,26 @@ export class MoviesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getMovies(); 
+
+    this.getMovies();
+
   }
 
   getMovies() {
-    this.moviesService
-        .getMovies()
-        .subscribe( data => {
-          console.log(data);
-          this.moviesList = data; 
-          
-        }, err => {
-          console.log(err);
-        }); 
+    return this.moviesService
+               .getMovies()
+               .subscribe( data => {
+                 console.log(data);
+                 this.moviesList = data; 
+                  
+                }, err => {
+                  console.log(err);
+                }); 
+  }; 
+
+
+  ngOnDestroy() {
+    this.getMovies().unsubscribe(); 
   }
 
 }
