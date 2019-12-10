@@ -4,3 +4,13 @@ $black: black;
 $dark-grey: #3f434e; 
 $white: white; 
 $red: #d8232a; 
+
+
+.main-btn {
+    width: 118px;
+    height: 38px;
+    border-radius: 5px;
+    background-color: #d8232a;
+    color: $white;
+    border: none;
+}

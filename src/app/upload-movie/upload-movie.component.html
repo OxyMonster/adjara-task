@@ -1,0 +1,21 @@
+<div class="upload mt-4">
+  <div class="upload__title">
+    <h4>Upload Movie</h4>   
+  </div> 
+  <div class="upload-content">
+    <form [formGroup] = 'movieForm' (ngSubmit) = 'onSubmit(movieForm)'>
+      <label for="form-title">Enter Title</label>
+      <input id="form-title" type="text" class="form-control" formControlName="title">
+      <label for="form-description">Enter Description</label>
+      <input id="form-description" type="text" class="form-control" formControlName="description">
+      <label for="form-description pl-3">Upload image</label>
+      <input id="main-btn" type="file" class="mt-3" (change)="onFileSelected($event)" >
+      <label for="form-description pl-3">Upload Video</label>
+      <input id="main-btn" type="file" class="mt-3">
+      <div class="d-flex justify-content-end mt-3">
+        <button type="submit" class="main-btn">Upload</button>
+      </div>
+    </form>
+  </div> 
+</div>      
+

@@ -5,32 +5,37 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MovieImgSliderComponent } from './components/movie-img-slider/movie-img-slider.component';
-import { MainHeaderComponent } from './components/main-header/main-header.component';
-import { MoviesComponent } from './components/movies/movies.component';
-import { UploadMovieComponent } from './components/upload-movie/upload-movie.component';
+import { MovieImgSliderComponent } from './movie-img-slider/movie-img-slider.component';
+import { MainHeaderComponent } from './main-header/main-header.component';
+import { MoviesComponent } from './movies/movies.component';
+import { UploadMovieComponent } from './upload-movie/upload-movie.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MoviesService } from './services/movies.service';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MoviesComponent,
-    MainHeaderComponent,
-    MovieImgSliderComponent,
-    // MoviesComponent,
-    UploadMovieComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-  ],
-  providers: [
-    // NgbCarouselConfig
-  ],
-  bootstrap: [
-    AppComponent,
-   
-
-  ]
+   declarations: [
+      AppComponent,
+      MoviesComponent,
+      MainHeaderComponent,
+      MovieImgSliderComponent,
+      UploadMovieComponent,
+      MovieDetailsComponent
+   ],
+   imports: [
+      BrowserModule,
+      AppRoutingModule,
+      NgbModule,
+      ReactiveFormsModule,
+      HttpClientModule
+   ],
+   providers: [
+      MoviesService
+   ],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule { }
