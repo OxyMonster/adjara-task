@@ -11,6 +11,7 @@ export class UploadMovieComponent implements OnInit {
 
   movieForm: FormGroup; 
   selectedFile: File = null; 
+  showError: boolean = false; 
 
   constructor(
     private fb: FormBuilder, 
@@ -28,7 +29,8 @@ export class UploadMovieComponent implements OnInit {
   }
 
   onFileSelected(event: any) {
-    
+      console.log(this.movieForm.value);
+      
       this.selectedFile = event.target.files[0]; 
       this.movieForm.get('movieImg').setValue(this.selectedFile); 
       console.log(this.movieForm.get('movieImg').value);
@@ -43,18 +45,32 @@ export class UploadMovieComponent implements OnInit {
     uploadData.append('description', this.movieForm.get('description').value);
     uploadData.append('movieImg', this.movieForm.get('movieImg').value);    
         
-    
+    this.isFormValid(); 
+    if(this.showError) {
     this.movieService
         .submitFormToServer(uploadData)
         .subscribe( data => {
           console.log(data);
+          this.showError = false; 
 
         }, err => {
           console.log(err);
 
-        } ); 
+        }); 
 
     this.movieForm.reset(); 
+  } else {
+    this.showError = true;   
   }; 
+};
+
+isFormValid() {
+  
+  if (this.selectedFile && this.movieForm.value.title && this.movieForm.value.description) {
+    this.showError = true; 
+  } else {
+    this.showError = false; 
+  }
+}
 
 }
