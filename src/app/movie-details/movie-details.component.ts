@@ -41,9 +41,12 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
     return this.movieService
                .getMovieByID(this.movieID)
                .subscribe(data => {
-                 this.selectedMovie = data;
-    
-                 
+                this.selectedMovie = data; 
+                // console.log(this.selectedMovie);
+                this.selectedMovieURL = this.selectedMovie.movieFiles[1].path; 
+                console.log(this.selectedMovie.movieFiles[1]);
+                
+                
                  
                }, err => {
                  console.log(err);

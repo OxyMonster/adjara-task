@@ -3,13 +3,14 @@
     <p>{{ selectedMovie.title }}</p>
   </div>
   <div class="col">
-    <p>{{ selectedMovie.movieFiles[1].path }}</p>
+    <p>{{ selectedMovieURL }}</p>
+  
   </div>
 </div>   
 
 <div class="container">
   <div class="c-video">
-    <!-- <video #video class="video" [src]="sanitarizer.bypassSecurityTrustUrl('http://localhost:3000/' + selectedMovie[0]['movieFiles'][1]['path'])" (timeupdate)='getVideoProgress()'></video> -->
+    <video #video class="video" [src]="sanitarizer.bypassSecurityTrustUrl('http://localhost:3000/' + selectedMovieURL)" (timeupdate)='getVideoProgress()'></video>
     <div class="controls d-flex">
       
       <div class="red-bar">

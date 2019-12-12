@@ -3,6 +3,7 @@ const router = express.Router();
 const multer = require('multer'); 
 const Movie = require('../models/movie'); 
 const mongoose = require('mongoose'); 
+const fs = require('fs'); 
 
 
 
@@ -28,6 +29,7 @@ router.get('/movies', (req, res) => {
     Movie.find()
          .then(result => {
              res.status(200).json(result); 
+
          })
          .catch(err => {
              console.log(err);
@@ -40,6 +42,7 @@ router.get('/movies/:id', (req, res) => {
 
     Movie.findById(movieID)
          .then(result => {
+            //  res.status(200).json(result); 
              res.status(200).json(result); 
     
              
@@ -51,10 +54,18 @@ router.get('/movies/:id', (req, res) => {
    
 }); 
 
+
 router.get('/uploads/:id', (req, res) => {
-    console.log(req.params.id);
-    // res.status(200).download('../backend/uploads/' + req.params.id )
-    res.status(200).download('../backend/uploads/' + req.params.id )
+    if (req.params.id.includes('jpg', 'png', 'jpeg')) {
+        
+        res.status(200).download('../backend/uploads/' + req.params.id ) ;   
+        console.log(req.params.id);
+        
+    } else {
+        res.status(200).download('../backend/uploads/' + req.params.id ) ;  
+        
+    }
+    
 
 })
 
