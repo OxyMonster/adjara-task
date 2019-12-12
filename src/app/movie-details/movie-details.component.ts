@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
 import { ActivatedRoute } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-movie-details',
@@ -13,6 +14,7 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
   selectedMovie: any = [];
   isPauseActive: boolean = false; 
   progressValue: string; 
+  selectedMovieURL: any;
   
 
   @ViewChild('video', { static: false }) myVideo: ElementRef; 
@@ -21,7 +23,8 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
 
   constructor(
     private movieService: MoviesService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public sanitarizer: DomSanitizer
   ) { }
 
   ngOnInit() {
@@ -38,8 +41,9 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
     return this.movieService
                .getMovieByID(this.movieID)
                .subscribe(data => {
-                 console.log(data);
-                 this.selectedMovie = data; 
+                 this.selectedMovie = data;
+    
+                 
                  
                }, err => {
                  console.log(err);
@@ -67,12 +71,12 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
   }; 
 
   fullScreen() {
-    console.log("fullscreen");
-    
+
     this.myVideo.nativeElement.requestFullscreen();
+
   };
 
-  videoVolume(e) {
+  toggleVolume(e) {
 
    this.myVideo.nativeElement.volume = e.target.value / 100; 
 
@@ -80,9 +84,11 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
 
   
 
+
+
   ngOnDestroy(): void {
     
-    this.getMovieByID().unsubscribe(); 
+    // this.getMovieByID().unsubscribe(); 
   }
 
 }

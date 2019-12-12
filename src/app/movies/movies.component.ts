@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-movies',
@@ -12,7 +13,8 @@ export class MoviesComponent implements OnInit, OnDestroy {
   localHost: 'http://localhost:3000/'
 
   constructor(
-    private moviesService: MoviesService
+    private moviesService: MoviesService,
+    public sanitarizer:DomSanitizer
   ) { }
 
   ngOnInit() {

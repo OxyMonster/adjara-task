@@ -1,15 +1,15 @@
-<!-- <div class="movie-content">
+<div class="movie-content">
   <div class="col">
     <p>{{ selectedMovie.title }}</p>
   </div>
   <div class="col">
-    <p>{{ selectedMovie.description }}</p>
+    <p>{{ selectedMovie.movieFiles[1].path }}</p>
   </div>
-</div> -->
+</div>   
 
 <div class="container">
   <div class="c-video">
-    <video #video class="video" src="../../assets/1.mp4" (timeupdate)='getVideoProgress()'></video>
+    <!-- <video #video class="video" [src]="sanitarizer.bypassSecurityTrustUrl('http://localhost:3000/' + selectedMovie[0]['movieFiles'][1]['path'])" (timeupdate)='getVideoProgress()'></video> -->
     <div class="controls d-flex">
       
       <div class="red-bar">
@@ -26,7 +26,7 @@
         <div class="col-md-5 d-flex justify-content-between">
           <button class="d-flex">
               <i *ngIf="!showMute" class="fas fa-volume-up pr-2"></i>
-              <input class="pl-2 volume custom-range" type="range" (change) = 'videoVolume($event)'>
+              <input class="pl-2 volume custom-range" type="range" (change) = 'toggleVolume($event)'>
           </button>
           <button class="">
               <i (click)="fullScreen()" class="fas fa-compress"></i>

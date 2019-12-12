@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer'); 
 const Movie = require('../models/movie'); 
 const mongoose = require('mongoose'); 
-const URL  = 'http://localhost:3000/';
+
 
 
 const storage = multer.diskStorage({
@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
         cb( null, './uploads'); 
     }, 
     filename: function(req, file, cb) {
-        cb( null, new Date().toISOString() + file.originalname); 
+        cb( null, file.originalname); 
     }
 }); 
 
@@ -19,9 +19,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ 
     storage: storage, 
-    limits: {
-        fileSize: 1024 * 1024 * 5 
-    },
 }); 
 
 const movies = []; 
@@ -38,27 +35,40 @@ router.get('/movies', (req, res) => {
 }); 
 
 router.get('/movies/:id', (req, res) => {
+    
     const movieID = req.params.id; 
 
     Movie.findById(movieID)
          .then(result => {
              res.status(200).json(result); 
+    
+             
          }, err => {
              console.log(err);
              res.status(400).json(err);
          }); 
+
+   
 }); 
 
-router.post('/upload-movie', upload.single('movieImg'), (req, res) => {
+router.get('/uploads/:id', (req, res) => {
+    console.log(req.params.id);
+    // res.status(200).download('../backend/uploads/' + req.params.id )
+    res.status(200).download('../backend/uploads/' + req.params.id )
 
-    // console.log(req.file);
+})
+
+router.post('/upload-movie', upload.array('movieFiles'), (req, res) => {
+
+    console.log(req.files);
     // console.log(req.body);
 
     const movie = new Movie({
         _id:  new mongoose.Types.ObjectId(), 
         title: req.body.title, 
         description: req.body.description, 
-        movieImg: URL + req.file.path
+        movieFiles: req.files, 
+
     }); 
 
     movie.save()

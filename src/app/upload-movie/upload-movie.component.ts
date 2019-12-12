@@ -11,16 +11,19 @@ export class UploadMovieComponent implements OnInit {
 
   movieForm: FormGroup; 
   selectedFile: File = null; 
+  selectedVideo: any = null; 
   showError: boolean = false; 
+
+  movieFiles: any[] = []; 
 
   constructor(
     private fb: FormBuilder, 
-    private movieService: MoviesService
+    private movieService: MoviesService,
     ) { 
     this.movieForm = this.fb.group({
       title : [ '', Validators.required  ],
       description : [ '', Validators.required ],
-      movieImg: [ '' , Validators.required ]
+  
     })
   }
 
@@ -29,11 +32,10 @@ export class UploadMovieComponent implements OnInit {
   }
 
   onFileSelected(event: any) {
-      this.selectedFile = event.target.files[0]; 
-      this.movieForm.get('movieImg').setValue(this.selectedFile); 
-      // console.log(this.movieForm.get('movieImg').value);
+    this.movieFiles.push(event.target.files[0]); 
 
   }; 
+
 
 
   onSubmit() {
@@ -41,8 +43,14 @@ export class UploadMovieComponent implements OnInit {
     const uploadData = new FormData();
     uploadData.append('title', this.movieForm.get('title').value);
     uploadData.append('description', this.movieForm.get('description').value);
-    uploadData.append('movieImg', this.movieForm.get('movieImg').value);    
-        
+    for( let file of this.movieFiles ) {
+      console.log(file);
+      
+      uploadData.append('movieFiles', file );   
+      
+    }; 
+     
+           
     this.isFormValid(); 
     if(this.showError) {
     this.movieService
@@ -57,6 +65,9 @@ export class UploadMovieComponent implements OnInit {
         }); 
 
     this.movieForm.reset(); 
+    this.movieFiles = []; 
+  
+    
   } else {
     this.showError = true;   
   }; 
@@ -64,7 +75,7 @@ export class UploadMovieComponent implements OnInit {
 
 isFormValid() {
   
-  if (this.selectedFile && this.movieForm.value.title && this.movieForm.value.description) {
+  if (this.movieForm.value.title && this.movieForm.value.description) {
     this.showError = true; 
   } else {
     this.showError = false; 
