@@ -12,15 +12,12 @@ export class AppComponent {
 
   }
 
-  showNavigationArrows = false;
-  showNavigationIndicators = false;
-  images = [1055, 194, 368].map((n) => `https://picsum.photos/id/${n}/900/500`);
+ 
 
 
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
+
     
   }
 

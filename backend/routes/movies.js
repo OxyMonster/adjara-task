@@ -3,6 +3,8 @@ const router = express.Router();
 const multer = require('multer'); 
 const Movie = require('../models/movie'); 
 const mongoose = require('mongoose'); 
+const URL  = 'http://localhost:3000/';
+
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
@@ -13,14 +15,6 @@ const storage = multer.diskStorage({
     }
 }); 
 
-const fileFilter = (req, file, cb) => {
-    if(file.mimetype === 'image.jpeg' || file.mimetype === 'img/png') {
-        cb(null, true); 
-    } else {
-        cb(null, false);
-    };
-   
-}; 
 
 
 const upload = multer({ 
@@ -28,9 +22,6 @@ const upload = multer({
     limits: {
         fileSize: 1024 * 1024 * 5 
     },
-    fileFilter: {
-        fileFilter
-    }
 }); 
 
 const movies = []; 
@@ -67,7 +58,7 @@ router.post('/upload-movie', upload.single('movieImg'), (req, res) => {
         _id:  new mongoose.Types.ObjectId(), 
         title: req.body.title, 
         description: req.body.description, 
-        movieImg: req.file.path
+        movieImg: URL + req.file.path
     }); 
 
     movie.save()

@@ -1,9 +1,9 @@
-<div class="upload mt-4 col-md-12">
+<div class="upload mt-4 col-md-8">
   <div class="upload__title d-flex mt-3 justify-content-center pb-3">
     <h4>UPLOAD MOVIE</h4>   
   </div> 
   <div class="upload__content mt-4">
-    <form autocomplete="off" [formGroup] = 'movieForm' (ngSubmit) = 'onSubmit()'>
+    <form autocomplete="off" [formGroup] = 'movieForm' (ngSubmit) = 'onSubmit()' method="POST" enctype="multipart/form-data">
       <div class="mt-3 col">
         <label for="form-title">Title*</label>
         <input id="form-title" type="text" class="form-control" formControlName="title">

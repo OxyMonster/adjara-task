@@ -8,14 +8,13 @@ label {
 }    
 
 .upload {
-    // background-color: rgba(233, 229, 229, 0.932);
+    margin: 0 auto;
     background-color:$cool-grey;
     padding: 1.5rem; 
     border-radius: .5rem;
     &__title {
         border-bottom: 1px solid $red;
         h4 {
-            // color: $red;
             font-weight: 200;
 
         }
