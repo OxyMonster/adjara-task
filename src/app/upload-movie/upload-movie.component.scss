@@ -1,7 +1,7 @@
 @import '../../assets/variable'; 
 
 label {
-    // color: $black;
+    color: $black;
     color: $red;
 
     font-weight: 300;
@@ -9,7 +9,7 @@ label {
 
 .upload {
     // background-color: rgba(233, 229, 229, 0.932);
-    background-color:#f1f2f6;
+    background-color:$cool-grey;
     padding: 1.5rem; 
     border-radius: .5rem;
     &__title {

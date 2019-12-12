@@ -9,6 +9,7 @@ import { MoviesService } from 'src/app/services/movies.service';
 export class MoviesComponent implements OnInit, OnDestroy {
 
   moviesList: any = []; 
+  localHost: 'http://localhost:3000/'
 
   constructor(
     private moviesService: MoviesService

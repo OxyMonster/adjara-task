@@ -1,15 +1,28 @@
-<div class="movies mt-4 d-flex justify-content-between" > 
-   <div class="movies-content col-md-4" *ngFor="let item of moviesList">
-    <div class="movies-content__title">
+
+ 
+<div class="movies mt-4 p-3">
+   <div class="movies__title mt-3 d-flex justify-content-center col-md-12 pb-3 p">
+        <h4>M O V I E S</h4>   
+   </div>  
+   <div class="d-flex justify-content-between ">
+   <div class="movies-content mt-5 col-md-4 pb-3" *ngFor="let item of moviesList">
+    <div class="movies-content__title d-flex justify-content-center mt-2">
         <!-- <a>Movie Title: {{ item.title }}</a> -->
-        <a [routerLink]="[ '/movies', item._id ]">{{ item.title }}</a>
+        <a [routerLink]="[ '/movies', item._id ]">{{ item.title | uppercase }}</a>
     </div>
-    <div class="movies-content__description">
-        <p>Movie Description: {{ item.description }}</p>
+    <div class="d-flex mt-4 justify-content-between">
+        <div class="movies-content__description col-md-6">
+            <p>Movie Description: {{ item.description }}</p>
+        </div>
+        <div class="movies-content__image col-m3-6">
+            <p>Movie Image: {{ localHost + item.image }}</p>
+            <img [src]="item.movieImg " alt="">    
+        </div>
     </div>
-    <div class="movies-content__image">
-        <p>Movie Image: {{ item.image }}</p>
-        <img [src]="item.movieImg " alt="">    
+        <div class="movies-content__btn d-flex justify-content-end mt-5">
+            <button [routerLink]="[ '/movies', item._id ]" class="main-btn">WATCH NOW</button>
+        </div>
     </div>
-   </div>
-</div>     
+    </div>
+</div>
+   

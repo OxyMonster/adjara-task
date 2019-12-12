@@ -29,11 +29,9 @@ export class UploadMovieComponent implements OnInit {
   }
 
   onFileSelected(event: any) {
-      console.log(this.movieForm.value);
-      
       this.selectedFile = event.target.files[0]; 
       this.movieForm.get('movieImg').setValue(this.selectedFile); 
-      console.log(this.movieForm.get('movieImg').value);
+      // console.log(this.movieForm.get('movieImg').value);
 
   }; 
 
@@ -48,7 +46,7 @@ export class UploadMovieComponent implements OnInit {
     this.isFormValid(); 
     if(this.showError) {
     this.movieService
-        .submitFormToServer(uploadData)
+        .submitFormToDB(uploadData)
         .subscribe( data => {
           console.log(data);
           this.showError = false; 

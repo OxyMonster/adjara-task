@@ -17,12 +17,7 @@ constructor(
   
 ) { }
 
-// uploadFile(data: FormData) {
-//   return this.http.post(this.UPLOAD_URL, data); 
-
-// };
-
-submitFormToServer(data: any,) { 
+submitFormToDB(data: any,) { 
   console.log(data);
   return this.http.post(this.UPLOAD_URL, data); 
   
@@ -34,6 +29,6 @@ getMovies() {
 
 getMovieByID(movieID: string) {
   return this.http.get(`${this.GET_ALL_MOVIES_URL}/${movieID}`); 
-}
+}; 
 
 }
