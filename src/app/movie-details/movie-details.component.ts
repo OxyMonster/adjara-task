@@ -40,12 +40,13 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
   getMovieByID() {
     return this.movieService
                .getMovieByID(this.movieID)
-               .subscribe(data => {
+               .subscribe((data: any) => {
                 this.selectedMovie = data; 
-                // console.log(this.selectedMovie);
-                this.selectedMovieURL = this.selectedMovie.movieFiles[1].path; 
-                console.log(this.selectedMovie.movieFiles[1]);
-                
+        
+                // this.selectedMovieURL = this.selectedMovie.movieFiles[1].path; 
+                // console.log(data['movieFiles'][1]['path']);
+                this.selectedMovieURL = data['movieFiles'][1]['path']
+              
                 
                  
                }, err => {
@@ -90,8 +91,8 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
 
 
   ngOnDestroy(): void {
-    
-    // this.getMovieByID().unsubscribe(); 
+    this.getMovieByID().unsubscribe(); 
+
   }
 
 }

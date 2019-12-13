@@ -7,6 +7,9 @@ const fs = require('fs');
 
 
 
+
+
+
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb( null, './uploads'); 
@@ -42,9 +45,7 @@ router.get('/movies/:id', (req, res) => {
 
     Movie.findById(movieID)
          .then(result => {
-            //  res.status(200).json(result); 
-             res.status(200).json(result); 
-    
+             res.status(200).json(result);
              
          }, err => {
              console.log(err);
@@ -56,18 +57,20 @@ router.get('/movies/:id', (req, res) => {
 
 
 router.get('/uploads/:id', (req, res) => {
-    if (req.params.id.includes('jpg', 'png', 'jpeg')) {
+ console.log("=))");
+ 
+        const path = '../backend/uploads/' + req.params.id
+        const stat = fs.statSync(path)
+        const fileSize = stat.size
+        const head = {
+          'Content-Length': fileSize,
+          'Content-Type': 'video/mp4',
+        }
+        res.writeHead(200, head)
+        fs.createReadStream(path).pipe(res);
         
-        res.status(200).download('../backend/uploads/' + req.params.id ) ;   
-        console.log(req.params.id);
-        
-    } else {
-        res.status(200).download('../backend/uploads/' + req.params.id ) ;  
-        
-    }
-    
+}); 
 
-})
 
 router.post('/upload-movie', upload.array('movieFiles'), (req, res) => {
 

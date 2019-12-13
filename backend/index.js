@@ -22,7 +22,8 @@ mongoose.connect( URI, {
 
 // * * *   MiddleWare for Cors-Origin * * * 
 app.use(cors({origin: '*'}));   
-app.use(express.static('public'))
+// app.use(express.static(__dirname, 'uploads'));
+
 
 
 

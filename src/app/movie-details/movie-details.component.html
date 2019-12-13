@@ -1,16 +1,10 @@
-<div class="movie-content">
-  <div class="col">
-    <p>{{ selectedMovie.title }}</p>
-  </div>
-  <div class="col">
-    <p>{{ selectedMovieURL }}</p>
-  
-  </div>
-</div>   
-
-<div class="container">
-  <div class="c-video">
-    <video #video class="video" [src]="sanitarizer.bypassSecurityTrustUrl('http://localhost:3000/' + selectedMovieURL)" (timeupdate)='getVideoProgress()'></video>
+ <div class="container">
+   <div class="content">
+  <div class="c-video" *ngIf="selectedMovieURL">
+    <video #video class="video" (timeupdate)='getVideoProgress()'>
+      <source [src]= "sanitarizer.bypassSecurityTrustUrl('http://localhost:3000/' + selectedMovieURL)" type='video/mp4'> 
+    </video>
+   
     <div class="controls d-flex">
       
       <div class="red-bar">
@@ -36,4 +30,13 @@
       </div>
     </div>
   </div>
+  <div class="movie mt-5 p-3">
+    <div class="movie__title">
+      <p> Title :  {{ selectedMovie.title }} </p>
+    </div>
+    <div class="movie__description">
+      <p> Description : {{ selectedMovie.description }} </p>
+    </div>
+  </div>
+ </div>
 </div>

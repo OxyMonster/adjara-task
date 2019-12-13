@@ -6,9 +6,14 @@
 
 }; 
 
+.content {
+    background: $cool-grey;
+    border-radius: .5rem;
+}
+
 .c-video {
     width: 100%;
-    max-width: 800px;
+    // max-width: 800px;
     position: relative;
     overflow: hidden;
     &:hover {

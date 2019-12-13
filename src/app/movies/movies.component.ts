@@ -10,7 +10,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class MoviesComponent implements OnInit, OnDestroy {
 
   moviesList: any = []; 
-  localHost: 'http://localhost:3000/'
 
   constructor(
     private moviesService: MoviesService,

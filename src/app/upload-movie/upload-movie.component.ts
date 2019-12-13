@@ -10,8 +10,6 @@ import { MoviesService } from 'src/app/services/movies.service';
 export class UploadMovieComponent implements OnInit {
 
   movieForm: FormGroup; 
-  selectedFile: File = null; 
-  selectedVideo: any = null; 
   showError: boolean = false; 
 
   movieFiles: any[] = []; 
