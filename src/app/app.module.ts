@@ -5,7 +5,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MovieImgSliderComponent } from './movie-img-slider/movie-img-slider.component';
 import { MainHeaderComponent } from './main-header/main-header.component';
 import { MoviesComponent } from './movies/movies.component';
 import { UploadMovieComponent } from './upload-movie/upload-movie.component';
@@ -13,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MoviesService } from './services/movies.service';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { MainHeroImageComponent } from './main-hero-image/main-hero-image.component';
 
 
 @NgModule({
@@ -20,9 +20,9 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
       AppComponent,
       MoviesComponent,
       MainHeaderComponent,
-      MovieImgSliderComponent,
       UploadMovieComponent,
-      MovieDetailsComponent
+      MovieDetailsComponent,
+      MainHeroImageComponent
    ],
    imports: [
       BrowserModule,
