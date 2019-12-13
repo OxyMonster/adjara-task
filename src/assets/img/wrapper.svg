@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2124 1757" width="2124" height="1757">
-	<style>
-		tspan { white-space:pre }
-		.shp0 { fill: #3f444e } 
-		.shp1 { fill: #edeff0 } 
-	</style>
-	<path id="bg" class="shp0" d="M1 1L2123 1L2123 1756L1 1756L1 1Z" />
-	<path id="wrapper" class="shp1" d="M470 207L1654 207C1656.76 207 1659 209.24 1659 212L1659 1438C1659 1440.76 1656.76 1443 1654 1443L470 1443C467.24 1443 465 1440.76 465 1438L465 212C465 209.24 467.24 207 470 207Z" />
-</svg>
