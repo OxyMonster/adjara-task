@@ -4,8 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-1. Run `ng serve` for a dev server. 
-2. Navigate to backend folder install dependencies and run `npm run start` to start server 
+1. Run `ng serve` for a dev server.  
+2. Navigate to backend folder install dependencies and run `npm i -g nodemon` 
+3. `npm run start` to start server 
 
 
 ## Code scaffolding
